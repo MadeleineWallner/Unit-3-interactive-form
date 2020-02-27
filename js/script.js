@@ -52,12 +52,10 @@ const totalCostDiv = $('<div></div>');
 $('.activities').append(totalCostDiv);
 
 const activities = document.querySelectorAll("input[type='checkbox']");
-console.log(activities);
 
 //Eventlistener to calculate the total cost.
 $('.activities')[0].addEventListener('change', (e) => {
     const dataCost = e.target.getAttribute('data-cost');
-    console.log(dataCost);
     if (e.target.checked){
         totalCost += parseInt(dataCost);
     } else {
@@ -67,7 +65,6 @@ $('.activities')[0].addEventListener('change', (e) => {
 
     //When an activity is checked, any activity that occurs at the same time and date is disabled.
     const dayAndTimeChecked = e.target.getAttribute('data-day-and-time');
-    console.log(dayAndTimeChecked);
     for (let i = 0; i < activities.length; i++){
         let activitiesDAT = activities[i].getAttribute('data-day-and-time');
 
