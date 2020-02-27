@@ -197,12 +197,13 @@ $('button')[0].addEventListener('click', (e) => {
     if ($('#cc-num').val() === ''){
         e.preventDefault();
         creditCardEmpty.show();
-    } if ($('#cc-num').val() != '' && ccRegex.test($('#cc-num').val()) === false){
+    } else if ($('#cc-num').val() != '' && ccRegex.test($('#cc-num').val()) === false){
         e.preventDefault();
         creditCardError.show();
         creditCardEmpty.hide();
     } else {
         creditCardError.hide();
+        creditCardEmpty.hide();
     } 
 
     //zip code validation
